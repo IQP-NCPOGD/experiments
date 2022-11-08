@@ -1,0 +1,55 @@
+.Home {
+  text-align: center;
+}
+
+.Home-logo {
+  height: 40vmin;
+  pointer-events: none;
+  border-radius: 15px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Home-logo {
+    animation: Home-logo-spin infinite 3s ease-in-out;
+
+  }
+}
+
+.Home-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  gap: 10vh;
+}
+
+
+.Home-link {
+  color: #61dafb;
+}
+
+@keyframes Home-logo-spin {
+  0%,100%{
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+
+.arjs {
+  width: 200px;
+  min-width: fit-content;
+  height: 60px;
+  background-color: rgb(173 126 126);
+
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+}

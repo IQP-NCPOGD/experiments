@@ -1,15 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Home from './Home/Home';
+import ARJS from './ARJS/ARJS';
 import reportWebVitals from './reportWebVitals';
 
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
+const App = () => {
+  return ( 
+   <Router>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path="ARJS" element={<ARJS />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+};
+
+const Layout = () => {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/"> Home</Link>
+          </li>
+          
+          <li>
+            <Link to="/ARJS"> AR.js</Link>
+          </li>
+        </ul>
+      </nav>
+
+    <Outlet />
+    </>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<App />);
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
