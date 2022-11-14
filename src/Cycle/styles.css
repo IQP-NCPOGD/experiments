@@ -22,7 +22,7 @@
 }
 
 
-.items > div {
+.items > *:not(h1) {
   margin: 10px;
   height: 100px;
   background-color: #226f54;
@@ -48,8 +48,4 @@
 .data > p {
   padding: 0px 20px 0px 20px;
 }
-
-
-
-
 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Item from './items/Item';
+
 import './styles.css';
 
 class Cycle extends React.Component {
@@ -36,8 +38,8 @@ class Cycle extends React.Component {
       <div className="main">
         <div className="items">
           <h1> Items: </h1>
-          <div></div>
-        </div>
+          <Item name="Tree"></Item>
+			</div>
         <div className="data">
           <h1> Data: </h1>
           <p>Food: { this.state.food } </p>  

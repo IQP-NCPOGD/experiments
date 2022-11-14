@@ -1,0 +1,29 @@
+
+.item {
+	color: #E4FDE1;
+	font-size: 32px;
+	font-weight: bold;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+  align-items: center;	
+}
+.item > * {
+	flex-grow: 2;
+	height: 100%;
+	
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item > .add,
+.item > .sub {
+	font-size: 50px;
+	transition: transform 0.2s ease-in-out;
+	transform-origin: center;
+}
+.item > .add:hover,
+.item > .sub:hover {
+	transform: scale(1.5, 1.5);
+}
