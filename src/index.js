@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './Home/Home';
 import ARJS from './ARJS/ARJS';
+import Cycle from './Cycle/Cycle';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
+          <Route path="Cycle" element={<Cycle /> }/>
           <Route path="ARJS" element={<ARJS />} />
         </Route>
       </Routes>
@@ -30,6 +32,10 @@ const Layout = () => {
           
           <li>
             <Link to="/ARJS"> AR.js</Link>
+          </li>
+
+          <li>
+            <Link to="/Cycle">Nitrogen Cycle</Link>
           </li>
         </ul>
       </nav>
