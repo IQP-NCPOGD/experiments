@@ -1,30 +1,20 @@
 
-import React, { Component } from 'react';
+import { useState } from 'react';
 
 import './styles.css';
 
-class Item extends React.Component {
-	
-	constructor(props) {
-		super(props);
-
-    //tohis.handleClick = this.handleClick.bind(this);
-		
-		this.state = {
-			name: this.props.name ?? '{ unnamed item }' 
-		}
-	};
-
-	render() {
-		return (
-			<div className='item'>
-				<div className='sub' onClick={(e) => this.props.onSub(e)}>-</div>
-				<p>{ this.state.name }</p>
-				<div className='add' onClick={(e) => this.props.onAdd(e)}>+</div>
+const Item = (props) => { 
+	const [count, setCount] = useState(0);
+	return (
+		<div className='item'>
+			<div className='sub' onClick={() => { setCount(count - 1); props.onChange(count - 1); } }>-</div>
+			<div className='content'>
+				<h1>{ count + ' ' + props.name }</h1>
 			</div>
-		);
-	};
-}
+			<div className='add' onClick={() => { setCount(count + 1); props.onChange(count + 1); } }>+</div>
+		</div>
+	);
+};
 
 export default Item;
 

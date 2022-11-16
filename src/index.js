@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM, { hydrateRoot } from 'react-dom/client';
 import './index.css';
 import Home from './Home/Home';
 import ARJS from './ARJS/ARJS';
@@ -47,7 +47,6 @@ const Layout = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

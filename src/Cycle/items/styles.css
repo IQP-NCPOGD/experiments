@@ -13,11 +13,25 @@
 .item > * {
 	flex-grow: 2;
 	height: 100%;
-	
 	display: flex;
   justify-content: center;
   align-items: center;
+
 }
+.item > .content {
+	flex-direction: column;
+	}
+
+.item > .content > h1 {
+	font-size: 25px;
+	margin: 0;
+}
+.item > .content > p {
+	margin: 0;
+	font-weight: normal;
+	font-size: 20px;
+}
+
 .item > .add,
 .item > .sub {
 	font-size: 50px;
