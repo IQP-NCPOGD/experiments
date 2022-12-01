@@ -1,0 +1,21 @@
+
+
+.field > * {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+
+	}
+
+.field > .foodSilo {
+	background-image: url('../assets/silo1.svg');
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;;
+}
+
+
+
+
+
+

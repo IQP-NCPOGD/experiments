@@ -6,7 +6,7 @@
 
   background-color: tan;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 400px auto 300px;
   grid-template-rows: 1fr;
 }
 
@@ -25,10 +25,9 @@
 
 
 .items > *:not(h1) {
-  margin: 10px;
+  margin: 5px 20px;
   min-height: 80px;
   background-color: #226f54;
-
 }
 
 .data {
@@ -51,4 +50,37 @@
 .data > p {
   padding: 0px 20px 0px 20px;
 }
+
+.item.foodSilo {
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	flex-wrap:nowrap;
+	
+}
+
+.item.foodSilo > .title {
+	margin: 0px;
+	height: 100%;
+}
+
+.item.foodSilo > .icon {
+	flex-basis: 1;
+	background-image: url('./assets/silo1.svg');
+	height: 100px;
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+
+	transition: scale 100ms;
+}
+
+.item.foodSilo > .icon:hover {
+	scale: 120%;
+	cursor: grab;
+}
+
+
+
+
 

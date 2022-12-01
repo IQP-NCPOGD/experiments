@@ -1,0 +1,25 @@
+
+
+.container {
+	
+}
+
+.container { 
+	height :100%;
+	position: absolute;
+}
+
+.container > *:first-child {
+	left: 0%;
+
+	background-color: #ffffff;
+}
+.container > *:last-child {
+	right: 0%;
+
+	background-color: #000000;
+}
+
+
+
+

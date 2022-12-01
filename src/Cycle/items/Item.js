@@ -2,8 +2,9 @@
 import { useState } from 'react';
 
 import './styles.css';
+//import foodSilo1 from '../assets/silo.svg'; 
 
-const Item = (props) => { 
+export const Item = (props) => { 
 	const [count, setCount] = useState(0);
 	return (
 		<div className='item'>
@@ -16,5 +17,13 @@ const Item = (props) => {
 	);
 };
 
-export default Item;
+export const FoodSiloItem = (props) => {
+	return ( 
+		<div className='item foodSilo'>
+			<p className='title'>Food Silo: </p>
+			<div className='icon' draggable/>
+		</div>
+	);
+}
+
 

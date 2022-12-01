@@ -20,7 +20,8 @@
 }
 .item > .content {
 	flex-direction: column;
-	}
+	text-align: center;
+}
 
 .item > .content > h1 {
 	font-size: 25px;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 //import { ScrollView } from 'react-native';
-import Item  from './items/Item';
+import { Item, FoodSiloItem } from './items/Item';
+import { Field } from './field/Field';
+import ProgressBar from './utils/progress-bar';
 import './styles.css';
 
 class Cycle extends Component {
@@ -42,6 +44,8 @@ class Cycle extends Component {
       hour: this.state.hour + 1  
     });
   };
+	
+	
 
   render () {
     return (
@@ -49,22 +53,17 @@ class Cycle extends Component {
         <div className="items">
           <h1> Items: </h1>
           <Item name="Farms" onChange={(c) => { this.setState({farms: c}); } } />
-          <Item name="Food Silos" onChange={(c) => { this.setState({foodSilos: c}); } } />
-          <Item name="Dentrifiers" onChange={(c) => { this.setState({dentrifiers: c}); } } />
-          <Item name="Statues" onChange={(c) => { this.setState({statues: c}); } } />
-          <Item name="Ammonia Silos" onChange={(c) => { this.setState({ammoniaSilos: c}); } } />
-					<Item name="Ponds" onChange={(c) => { this.setState({ponds: c}); } } />
-					<Item name="Trees" onChange={(c) => { this.setState({trees: c}); } } />
-					<Item name="Flowers" onChange={(c) => { this.setState({flowers: c}); } } />
-					<Item name="Nitrifying Bacteria Concentration" onChange={(c) => { this.setState({nbc: c}); } } />
-					<Item name="Denitrifying Bacteria Concentration" onChange={(c) => { this.setState({dbc: c}); } } />
+          <FoodSiloItem/>
+  			</div>
 
-			</div>
+				<Field />	
+			
         <div className="data">
           <h1> Data: </h1>
           <p>Food: { this.state.food } </p>  
           <p>Hour: { this.state.hour } </p>  
-          <p>Nitrogen Content: { this.state.n2 } </p>  
+          <p>Nitrogen Content: { this.state.n2 } </p> 
+					<ProgressBar value={ this.state.n2 } />
           <p>Runoff: { this.state.runoff } </p>  
         </div>
       </div>
