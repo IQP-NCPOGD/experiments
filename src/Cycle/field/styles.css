@@ -17,6 +17,8 @@
 	
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: contain;
+	transform: translate(-50px, -50px);
 
 	display: grid;
 	grid-template-columns: auto;
@@ -45,13 +47,10 @@
 }
 
 .field > .potato.seedling {
-	background-image: url('../assets/seedling.svg');
-	background-size: contain;
-	
-	transform: translate(-50px, -50px);
+	background-image: url('../assets/seedling.svg');	
 }
 
-.field > .potato > .menu {
+.field > * > .menu {
 	transform: translate(200px, 000px);
 
 	z-index: 5;
@@ -69,12 +68,13 @@
 	padding: 2em;
 }
 
-.field > .potato > .menu > h1 {
+.field > * > .menu > h1 {
 	flex: 0 0 auto;
 	margin: auto;
+	margin-bottom: 1em;
 	text-align: center;	
 }
-.field > .potato > .menu > .info {
+.field > * > .menu > .info {
 	flex: 0 0 auto;
 	border: solid 1px brown;
 	border-radius: 1em;
@@ -85,16 +85,16 @@
 	align-items: center;
 	gap: 1em;
 }
-.field > .potato > .menu > .info > * {
+.field > * > .menu > .info > * {
 	flex: 1 1 auto;
 	font-size: 1.5em;
 	padding: 0.5em;
 	margin: 0;
 }
-.field > .potato > .menu > .info > .key {
+.field > * > .menu > .info > .key {
 	font-weight: bold;
 }
-.field > .potato > .menu > .info > .value {
+.field > * > .menu > .info > .value {
 	border-width: inherit;
 	border-style: inherit;
 	border-color: inherit;

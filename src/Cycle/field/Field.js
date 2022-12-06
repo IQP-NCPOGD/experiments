@@ -1,8 +1,10 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { FieldObject, Potato } from './FieldItems';
+import { useFrameTime } from './useFrameTime';
+import { FoodSilo, Potato } from './FieldItems';
 import './styles.css';
+import { wait } from '@testing-library/user-event/dist/utils';
 
 export const Field = (props) => {
 	const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -10,6 +12,14 @@ export const Field = (props) => {
 
 	const [state, setState] = useState({});
 	const [items, setItems] = useState([]);
+	const [frameTime, setFrameTime] = useState();
+	
+
+	useEffect(() => {
+		items.forEach(item => {
+			item.age = (Date.now() - item.start);
+		});
+	});
 
 	const handleDragOver = (e) => {
 		e.preventDefault();
@@ -17,16 +27,21 @@ export const Field = (props) => {
 
 	const handleDrop = (e) => {
     var data = e.dataTransfer.getData("text/plain");
-		
+
 		let item = {	
 			x: e.clientX - offset.x, 
 			y: e.clientY - offset.y,
 			type: data,
 			radius: 200,
-			age: 0
+			age: 0,
+			start: Date.now() 
 		};
 		switch (data) {
+			case 'foodSilo':
+				item.capacity = 25;
+				break;
 			case 'potato':
+				
 				break;
 		}
 
@@ -60,20 +75,18 @@ export const Field = (props) => {
 		setDragging(false);
 	}
 	const itemToFieldObject = (item, key) => {
-		if (item.type === 'potato') {
-			return <Potato 	key={key}
+		switch (item.type) {
+			case 'foodSilo':
+				return <FoodSilo 	key={key}
+													item={item}
+													offset={offset}/>;
+			case 'potato':
+				return <Potato 	key={key}
 											item={item}
 											offset={offset}/>;
 		}
-		return (<FieldObject 	key={key} 
-													x={ item.x + offset.x } 
-													y={ item.y + offset.y } 
-													type={item.type} />);
 	}
-	
-	return (
-				
-				<div 	id='field'
+	return (<div 	id='field'
 							className='field' 
 							onDrop={event => handleDrop(event)}
 							onDragOver={event => handleDragOver(event)}
