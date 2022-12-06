@@ -1,21 +1,76 @@
 
+.field {
+	cursor: grab;
+	overflow: hidden;
+	
+}
+
+.field:active {
+	cursor: grabbing;
+}
 
 .field > * {
+	z-index: 4;
+
 	position: absolute;
 	width: 100px;
 	height: 100px;
+	background-repeat: no-repeat;
+	background-position: center;
 
-	}
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	justify-content: center;
+	align-content: center;
+}
+
+.field > * > .radius {
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 1;
+	border: solid 0.5em red;
+	border-radius: 50%;
+
+	aspect-ratio: 1/1;
+	transform: translateY(50px);
+}
 
 .field > .foodSilo {
 	background-image: url('../assets/silo1.svg');
-	background-size: 40%;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;;
 }
 
+.field > .potato {
+	background-image: url('../assets/potato.svg');
+}
 
+.field > .potato.seedling {
+	background-image: url('../assets/seedling.svg');
+	background-size: 100%;
+}
 
+.field > .potato {
 
+}
+.field > .potato > .menu {
+	z-index: 5;
+	position: relative;
+	left: 100%;
 
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgb(209, 92, 67, 0.8);
+	
+	width: fit-content;
+	border-radius: 1em;
+	padding: 2em;
+}
+
+.field > .potato > .menu > h1 {
+	flex: 1 0 auto;
+	margin: auto;
+	text-align: center;	
+}
 

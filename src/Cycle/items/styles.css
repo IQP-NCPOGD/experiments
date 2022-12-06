@@ -52,3 +52,43 @@
 	}
 }
 
+.item.foodSilo {
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	flex-wrap:nowrap;
+	
+}
+
+.item > .title {
+	margin: 0px;
+	height: 100%;
+}
+
+.item> .icon {
+	flex-basis: 1;
+	background-image: url('../assets/silo1.svg');
+	height: 100px;
+	aspect-ratio: 1/1;
+	margin: 15px;
+
+	transition: scale 100ms;
+}
+
+.item> .icon:hover {
+	scale: 120%;
+	cursor: grab;
+}
+
+.item.foodSilo > .icon {
+	background-image: url('../assets/silo1.svg');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+.item.potato > .icon {
+	background-image: url('../assets/potato.svg');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+

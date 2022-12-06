@@ -18,12 +18,27 @@ export const Item = (props) => {
 };
 
 export const FoodSiloItem = (props) => {
+	const handleDrag = (e) => {
+		e.dataTransfer.setData('text/plain', 'foodSilo');
+	};
+
 	return ( 
 		<div className='item foodSilo'>
 			<p className='title'>Food Silo: </p>
-			<div className='icon' draggable/>
+			<div className='icon' onDragStart={handleDrag} draggable/>
 		</div>
 	);
 }
 
+export const PotatoItem = (props) => {
+	const handleDrag = (e) => {
+		e.dataTransfer.setData('text/plain', 'potato');
+	};
 
+	return (
+		<div className='item potato'>
+			<p className='title'>Potato Plant: </p>
+			<div className='icon' onDragStart={handleDrag} draggable/>
+		</div>
+	);
+}

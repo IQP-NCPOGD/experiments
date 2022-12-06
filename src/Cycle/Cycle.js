@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { ScrollView } from 'react-native';
-import { Item, FoodSiloItem } from './items/Item';
+import { Item, FoodSiloItem, PotatoItem } from './items/Item';
 import { Field } from './field/Field';
 import ProgressBar from './utils/progress-bar';
 import './styles.css';
@@ -54,6 +54,7 @@ class Cycle extends Component {
           <h1> Items: </h1>
           <Item name="Farms" onChange={(c) => { this.setState({farms: c}); } } />
           <FoodSiloItem/>
+          <PotatoItem/>
   			</div>
 
 				<Field />	
