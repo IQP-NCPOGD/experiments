@@ -1,8 +1,6 @@
 
 import { useState } from 'react';
 
-import { FoodSiloItem } from '../items/Item';
-
 import { FieldObject, Potato } from './FieldItems';
 import './styles.css';
 
@@ -10,7 +8,8 @@ export const Field = (props) => {
 	const [offset, setOffset] = useState({ x: 0, y: 0 });
 	const [dragging, setDragging] = useState(false);
 
-	const [items, setItems] = useState([]);	
+	const [state, setState] = useState({});
+	const [items, setItems] = useState([]);
 
 	const handleDragOver = (e) => {
 		e.preventDefault();
@@ -19,16 +18,17 @@ export const Field = (props) => {
 	const handleDrop = (e) => {
     var data = e.dataTransfer.getData("text/plain");
 		
-		const field = document.getElementById('field');
-	
-
-		//console.log(e);
-		const item = {	
-			x: e.clientX, 
-			y: e.clientY,
+		let item = {	
+			x: e.clientX - offset.x, 
+			y: e.clientY - offset.y,
 			type: data,
-			radius: 200
+			radius: 200,
+			age: 0
 		};
+		switch (data) {
+			case 'potato':
+				break;
+		}
 
 		let drop = true;
 		items.forEach(i => {
@@ -40,6 +40,7 @@ export const Field = (props) => {
 				drop = false;
 			}
 		});
+
 		if (drop) {
 			items.push(item);
 		}
@@ -61,11 +62,12 @@ export const Field = (props) => {
 	const itemToFieldObject = (item, key) => {
 		if (item.type === 'potato') {
 			return <Potato 	key={key}
-											item={item} />;
+											item={item}
+											offset={offset}/>;
 		}
 		return (<FieldObject 	key={key} 
-													x={ item.x } 
-													y={ item.y } 
+													x={ item.x + offset.x } 
+													y={ item.y + offset.y } 
 													type={item.type} />);
 	}
 	

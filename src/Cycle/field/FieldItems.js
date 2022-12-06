@@ -1,7 +1,6 @@
 
 
 import { useState } from 'react';
-import { act } from 'react-dom/test-utils';
 import './styles.css';
 
 export const FieldObject = (props) => {
@@ -20,15 +19,16 @@ export const FieldObject = (props) => {
 
 export const Potato = (props) => {
 	const [active, setActive] = useState(false);
-	const { x, y, radius } = props.item;
+	const { x, y, radius, age } = props.item;
+	const offset = props.offset;
 
 	const handleClick = () => {
 		setActive(!active);
 	}
 
 	const style = {
-		left: (x - 50) + 'px', 
-		top:	(y - 50) + 'px' 
+		left: (x + offset.x) + 'px', 
+		top: (y + offset.y) + 'px' 
 	}
 
 	return (<div className={'potato seedling'}
@@ -38,6 +38,10 @@ export const Potato = (props) => {
 							<>
 							<div className='menu'>
 								<h1>Potato Plant</h1>
+								<div className='info'>
+									<p className='key'>Age:</p>
+									<p className='value'>{age}</p>
+								</div>
 							</div>
 							<div className='radius'
 									 style={{

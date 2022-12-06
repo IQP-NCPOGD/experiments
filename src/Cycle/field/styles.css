@@ -1,8 +1,7 @@
 
 .field {
 	cursor: grab;
-	overflow: hidden;
-	
+	overflow: hidden;	
 }
 
 .field:active {
@@ -15,6 +14,7 @@
 	position: absolute;
 	width: 100px;
 	height: 100px;
+	
 	background-repeat: no-repeat;
 	background-position: center;
 
@@ -28,11 +28,12 @@
 .field > * > .radius {
 	grid-column: 1 / span 1;
 	grid-row: 1 / span 1;
-	border: solid 0.5em red;
+	border: solid 0.5em rgb(209, 92, 67, 0.8);
 	border-radius: 50%;
 
 	aspect-ratio: 1/1;
-	transform: translateY(50px);
+
+	translate: 0px 75px;
 }
 
 .field > .foodSilo {
@@ -45,16 +46,15 @@
 
 .field > .potato.seedling {
 	background-image: url('../assets/seedling.svg');
-	background-size: 100%;
+	background-size: contain;
+	
+	transform: translate(-50px, -50px);
 }
 
-.field > .potato {
-
-}
 .field > .potato > .menu {
+	transform: translate(200px, 000px);
+
 	z-index: 5;
-	position: relative;
-	left: 100%;
 
 	display: flex;
 	flex-flow: column wrap;
@@ -62,6 +62,7 @@
 	align-items: center;
 
 	background-color: rgb(209, 92, 67, 0.8);
+	border: solid 3px brown;
 	
 	width: fit-content;
 	border-radius: 1em;
@@ -69,8 +70,35 @@
 }
 
 .field > .potato > .menu > h1 {
-	flex: 1 0 auto;
+	flex: 0 0 auto;
 	margin: auto;
 	text-align: center;	
 }
+.field > .potato > .menu > .info {
+	flex: 0 0 auto;
+	border: solid 1px brown;
+	border-radius: 1em;
 
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+}
+.field > .potato > .menu > .info > * {
+	flex: 1 1 auto;
+	font-size: 1.5em;
+	padding: 0.5em;
+	margin: 0;
+}
+.field > .potato > .menu > .info > .key {
+	font-weight: bold;
+}
+.field > .potato > .menu > .info > .value {
+	border-width: inherit;
+	border-style: inherit;
+	border-color: inherit;
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+}
