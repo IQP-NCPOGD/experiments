@@ -1,10 +1,8 @@
 
 import { useEffect, useState } from 'react';
 
-import { useFrameTime } from './useFrameTime';
 import { FoodSilo, Potato } from './FieldItems';
 import './styles.css';
-import { wait } from '@testing-library/user-event/dist/utils';
 
 export const Field = (props) => {
 	const [offset, setOffset] = useState({ x: 0, y: 0 });

@@ -26,6 +26,10 @@ export const FoodSilo = (props) => {
 		setActive(!active);
 	}
 
+	const handleMenuClick = (e) => {
+		 e.stopPropagation();
+	}
+
 	const style = {
 		left: (x + offset.x) + 'px', 
 		top: (y + offset.y) + 'px' 
@@ -37,11 +41,26 @@ export const FoodSilo = (props) => {
 							 onClick={ handleClick } >
 						{ active &&
 							<>
-							<div className='menu'>
+							<div className='menu'
+								onClick={ handleMenuClick } >
 								<h1>Food Silo</h1>
 								<div className='info'>
 									<p className='key'>Capacity:</p>
 									<p className='value'>{capacity}</p>
+								</div>
+								<div className='levels'>
+									<div className='one'>
+										<p className='key'>Level 1:</p>
+										<div className='value'></div>
+									</div>
+									<div className='two'>
+										<p className='key'>Level 2:</p>
+										<div className='value'></div>
+									</div>
+									<div className='three'>
+										<p className='key'>Level 3:</p>
+										<div className='value'></div>
+									</div>
 								</div>
 							</div>
 							<div className='radius'

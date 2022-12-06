@@ -35,7 +35,7 @@
 
 	aspect-ratio: 1/1;
 
-	translate: 0px 75px;
+	translate: 0px calc(50% - 50px);
 }
 
 .field > .foodSilo {
@@ -59,6 +59,7 @@
 	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
+	gap: 1em;
 
 	background-color: rgb(209, 92, 67, 0.8);
 	border: solid 3px brown;
@@ -71,7 +72,6 @@
 .field > * > .menu > h1 {
 	flex: 0 0 auto;
 	margin: auto;
-	margin-bottom: 1em;
 	text-align: center;	
 }
 .field > * > .menu > .info {
@@ -102,3 +102,48 @@
 	border-right: none;
 	border-bottom: none;
 }
+
+.field .menu > .levels {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
+
+	border: solid 1px brown;
+	border-radius: 1em;
+
+	font-size: 1.5em;
+	padding: 0.0em;
+	margin: 0;
+
+}
+
+.field .menu > .levels > * {
+	display: contents;
+}
+
+.field .menu > .levels > * > * {
+	margin: 0;
+	padding: 0.5em;
+
+	border: solid 1px brown;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+.field .menu > .levels > *:last-child > *{
+	border-bottom: none;
+}
+.field .menu > .levels .key {
+	font-weight: bold;
+
+	border-right: solid 1px brown;
+
+}
+
+.field .menu > .levels .value {
+
+}
+
+
+
