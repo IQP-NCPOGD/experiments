@@ -1,18 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.09 119.99">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #c5d6b0;
-      }
-
-      .cls-2 {
-        fill: #a3343e;
-      }
-    </style>
-  </defs>
-  <g id="Layer_1-2" data-name="Layer 1">
-    <path class="cls-1" d="M64.09,32.05c0,.07,0,.15,0,.23-.22,9.58-14.48,17.31-32.04,17.31S.22,41.86,0,32.27c0-.07,0-.15,0-.23s0-.15,0-.23C.12,14.23,14.42,0,32.05,0s31.92,14.23,32.04,31.82c0,.07,0,.15,0,.23Z"/>
-    <path class="cls-2" d="M64.09,32.05V113.77c0,3.43-2.78,6.21-6.21,6.21H6.21c-3.43,0-6.21-2.78-6.21-6.21V32.05c0,.07,0,.15,0,.23,.22,9.58,14.48,17.31,32.04,17.31s31.82-7.73,32.04-17.31c0-.07,0-.15,0-.23Z"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2_00000157987893889206694340000001365299901893152403_"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64.1 120"
+	 style="enable-background:new 0 0 64.1 120;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_00000003101328478133284460000014427501194632104886_);}
+</style>
+<radialGradient id="SVGID_1_" cx="32.045" cy="24.795" r="38.0504" fx="32.2794" fy="-3.8895" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#D4DAFF"/>
+	<stop  offset="1" style="stop-color:#BFD6FF"/>
+</radialGradient>
+<path class="st0" d="M64.1,32c0,0.1,0,0.2,0,0.2c-0.2,9.6-14.5,17.3-32,17.3S0.2,41.9,0,32.3c0-0.1,0-0.2,0-0.2s0-0.1,0-0.2
+	C0.1,14.2,14.4,0,32,0s31.9,14.2,32,31.8C64.1,31.9,64.1,32,64.1,32z"/>
+<linearGradient id="SVGID_00000052105488638764155060000002023566671576362425_" gradientUnits="userSpaceOnUse" x1="0" y1="76.015" x2="64.09" y2="76.015">
+	<stop  offset="6.741751e-04" style="stop-color:#AA2F00"/>
+	<stop  offset="1" style="stop-color:#FF7A55"/>
+</linearGradient>
+<path style="fill:url(#SVGID_00000052105488638764155060000002023566671576362425_);" d="M64.1,32v81.7c0,3.4-2.8,6.2-6.2,6.2H6.2
+	c-3.4,0-6.2-2.8-6.2-6.2V32c0,0.1,0,0.2,0,0.2c0.2,9.6,14.5,17.3,32,17.3s31.8-7.7,32-17.3C64.1,32.2,64.1,32.1,64.1,32L64.1,32z"/>
 </svg>

@@ -52,9 +52,9 @@ class Cycle extends Component {
 				<Field />	
 				<div className="items">
           <FoodSiloItem/>
-          <DenitrifierItem/>
           <PotatoItem/>
           <AmmoniumSiloItem/>
+          <DenitrifierItem/>
   			</div>
       </div>
     );
