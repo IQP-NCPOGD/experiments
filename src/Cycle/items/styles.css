@@ -11,7 +11,7 @@
   align-items: center;	
 }
 .item > * {
-	flex-grow: 2;
+	flex: 1 0 auto;
 	height: 100%;
 	display: flex;
   justify-content: center;
@@ -24,11 +24,10 @@
 }
 
 .item > .content > h1 {
-	font-size: 25px;
+	font-size: 2em;
 	margin: 0;
 }
 .item > .content > p {
-	margin: 0;
 	font-weight: normal;
 	font-size: 20px;
 }
@@ -61,7 +60,7 @@
 }
 
 .item > .title {
-	margin: 0px;
+	margin: 0;
 	padding: 0.5em;
 	height: 100%;
 }

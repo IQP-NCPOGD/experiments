@@ -11,9 +11,6 @@ function Home() {
           IQP: Nitrogen Cycle Public Outreach and Game Development
         </p>
         <img src={logo} className="Home-logo" alt="logo" />
-        <Link to="/ARJS" >
-          <button className="arjs">AR.js Experiments</button>
-        </Link>
       </header>
     </div>
   );
