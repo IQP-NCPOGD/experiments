@@ -1,7 +1,12 @@
 
 .field {
 	cursor: grab;
-	overflow: hidden;	
+	overflow: hidden;
+
+	display: flex;
+	flex-flow: column-reverse wrap;
+	justify-content:flex-start;
+	align-items: flex-end;
 }
 
 .field:active {
@@ -9,6 +14,7 @@
 }
 
 .field > .menu {
+
 	margin: 1em;
 	width: fit-content;
 
@@ -71,7 +77,9 @@
 .field > .items > .potato {
 	background-image: url('../assets/potato.svg');
 }
-
+.field > .items > .ammoniumSilo {
+	background-image: url('../assets/ammoniumSilo.svg');
+}
 .field > .items > .potato.seedling {
 	background-image: url('../assets/seedling.svg');	
 }

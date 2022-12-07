@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { FoodSilo, Potato, Denitrifier } from './FieldItems';
+import { FoodSilo, Potato, Denitrifier, AmmoniumSilo } from './FieldItems';
 import './styles.css';
 
 const getCapacity = (items) => {
@@ -74,6 +74,8 @@ export const Field = (props) => {
 			case 'denitrifier':
 				
 				break;
+			case 'ammoniumSilo':
+				break;
 		}
 	
 		let drop = true;
@@ -122,12 +124,16 @@ export const Field = (props) => {
 													}}/>;
 			case 'potato':
 				return <Potato 	key={key}
-											item={item}
-											offset={offset}/>;
-			case 'denitrifier':
-				return <Denitrifier 	key={key}
 												item={item}
 												offset={offset}/>;
+			case 'denitrifier':
+				return <Denitrifier key={key}
+														item={item}
+														offset={offset}/>
+			case 'ammoniumSilo':
+				return <AmmoniumSilo key={key}
+														 item={item}
+														 offset={offset}/>;
 
 		}
 	}

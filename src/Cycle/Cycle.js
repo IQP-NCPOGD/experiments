@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { ScrollView } from 'react-native';
-import { FoodSiloItem, PotatoItem, Denitrifier } from './items/Item';
+import { FoodSiloItem, PotatoItem, DenitrifierItem, AmmoniumSiloItem } from './items/Item';
 import { Field } from './field/Field';
 import './styles.css';
 
@@ -49,23 +49,13 @@ class Cycle extends Component {
   render () {
     return (
       <div className="main">
-        <div className="items">
-          <h1> Items: </h1>
-          <FoodSiloItem/>
-          <Denitrifier/>
-          <PotatoItem/>
-  			</div>
-
 				<Field />	
-			
-			{/*<div className="data">
-          <h1> Data: </h1>
-          <p>Food: { this.state.food } </p>  
-          <p>Hour: { this.state.hour } </p>  
-          <p>Nitrogen Content: { this.state.n2 } </p> 
-					<ProgressBar value={ this.state.n2 } />
-          <p>Runoff: { this.state.runoff } </p>  
-        </div>*/}
+				<div className="items">
+          <FoodSiloItem/>
+          <DenitrifierItem/>
+          <PotatoItem/>
+          <AmmoniumSiloItem/>
+  			</div>
       </div>
     );
   };

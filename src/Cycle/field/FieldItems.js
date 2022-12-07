@@ -91,7 +91,6 @@ export const FoodSilo = (props) => {
 					</div>);
 
 }
-
 export const Denitrifier = (props) => {
 	const [active, setActive] = useState(false);
 	const { x, y, radius, age } = props.item;
@@ -114,6 +113,43 @@ export const Denitrifier = (props) => {
 							<div className='menu'
 										onClick={ handleMenuClick } >
 								<h1>Denitrifier</h1>
+								<div className='info'>
+									<p className='key'>Age:</p>
+									<p className='value'>{getAgeText(age)}</p>
+								</div>
+							</div>
+								<div className='radius'
+									 style={{
+										 width: 2 * radius + 'px'
+									 }}>
+							</div>
+							</>
+						}
+					</div>);
+
+}
+export const AmmoniumSilo = (props) => {
+	const [active, setActive] = useState(false);
+	const { x, y, radius, age } = props.item;
+	const offset = props.offset;
+	
+	const handleClick = () => {
+		setActive(!active);
+	}
+
+	const style = {
+		left: (x + offset.x) + 'px', 
+		top: (y + offset.y) + 'px' 
+	}
+
+	return (<div className={'ammoniumSilo'}
+							 style={style}
+							 onClick={ handleClick } >
+						{ active &&
+							<>
+							<div className='menu'
+										onClick={ handleMenuClick } >
+								<h1>Ammonium Silo</h1>
 								<div className='info'>
 									<p className='key'>Age:</p>
 									<p className='value'>{getAgeText(age)}</p>

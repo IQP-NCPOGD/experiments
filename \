@@ -20,6 +20,7 @@
   background-color: #f4f0bb;
 
 	height: min-content;
+	overflow-y: scroll;
 
   display: flex;
   flex-flow: row wrap;
@@ -31,7 +32,10 @@
 	flex: 1 0 auto;
 }
 
-.items > * {
+.items > h1 {
+	flex: 1 0 100%;
+}
+.items > *:not(h1) {
   margin: 0.2em;
   background-color: #226f54;
 }
