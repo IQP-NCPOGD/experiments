@@ -29,6 +29,18 @@ export const FoodSiloItem = (props) => {
 		</div>
 	);
 }
+export const Denitrifier = (props) => {
+	const handleDrag = (e) => {
+		e.dataTransfer.setData('text/plain', 'denitrifier');
+	};
+
+	return ( 
+		<div className='item denitrifier'>
+			<p className='title'>Denitrifier: </p>
+			<div className='icon' onDragStart={handleDrag} draggable/>
+		</div>
+	);
+}
 
 export const PotatoItem = (props) => {
 	const handleDrag = (e) => {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 //import { ScrollView } from 'react-native';
-import { Item, FoodSiloItem, PotatoItem } from './items/Item';
+import { FoodSiloItem, PotatoItem, Denitrifier } from './items/Item';
 import { Field } from './field/Field';
-import ProgressBar from './utils/progress-bar';
 import './styles.css';
 
 class Cycle extends Component {
@@ -52,21 +51,21 @@ class Cycle extends Component {
       <div className="main">
         <div className="items">
           <h1> Items: </h1>
-          <Item name="Farms" onChange={(c) => { this.setState({farms: c}); } } />
           <FoodSiloItem/>
+          <Denitrifier/>
           <PotatoItem/>
   			</div>
 
 				<Field />	
 			
-        <div className="data">
+			{/*<div className="data">
           <h1> Data: </h1>
           <p>Food: { this.state.food } </p>  
           <p>Hour: { this.state.hour } </p>  
           <p>Nitrogen Content: { this.state.n2 } </p> 
 					<ProgressBar value={ this.state.n2 } />
           <p>Runoff: { this.state.runoff } </p>  
-        </div>
+        </div>*/}
       </div>
     );
   };

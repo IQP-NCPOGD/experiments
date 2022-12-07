@@ -8,7 +8,42 @@
 	cursor: grabbing;
 }
 
-.field > * {
+.field > .menu {
+	margin: 1em;
+	width: fit-content;
+
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgb(209, 92, 67, 0.8);
+	border: solid 3px brown;
+	border-radius: 1em;
+
+	transition: all 200ms;
+}
+.field > .menu:not(.active) > *:not(h1){
+	display: none;
+}
+
+.field > .menu > h1 {
+	padding: 0.5em;
+	margin: 0 0 0.5em 0em;
+}
+.field > .menu:not(.active) > h1 {
+	margin: 0;
+}
+.field > .menu.active > p {
+	font-size: 1.5em;
+	text-align: center;
+	width: 15em;
+
+	padding: 0 1em ;
+}
+
+
+.field > .items > * {
 	z-index: 4;
 
 	position: absolute;
@@ -18,16 +53,30 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-	transform: translate(-50px, -50px);
+	background-color: transparent;
 
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
+	display:grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
 	justify-content: center;
 	align-content: center;
 }
 
-.field > * > .radius {
+.field > .items > .foodSilo {
+	background-image: url('../assets/silo1.svg');
+}
+.field > .items > .denitrifier {
+	background-image: url('../assets/denitrifier.svg');
+}
+.field > .items > .potato {
+	background-image: url('../assets/potato.svg');
+}
+
+.field > .items > .potato.seedling {
+	background-image: url('../assets/seedling.svg');	
+}
+
+.field > .items > * > .radius {
 	grid-column: 1 / span 1;
 	grid-row: 1 / span 1;
 	border: solid 0.5em rgb(209, 92, 67, 0.8);
@@ -35,23 +84,16 @@
 
 	aspect-ratio: 1/1;
 
-	translate: 0px calc(50% - 50px);
 }
 
-.field > .foodSilo {
-	background-image: url('../assets/silo1.svg');
-}
+.field > .items .menu {
 
-.field > .potato {
-	background-image: url('../assets/potato.svg');
-}
+	z-index: 6;
+	position:absolute;
+	left: calc(50% + 100px);
 
-.field > .potato.seedling {
-	background-image: url('../assets/seedling.svg');	
-}
-
-.field > * > .menu {
-	transform: translate(200px, 000px);
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 1;
 
 	z-index: 5;
 
@@ -64,17 +106,18 @@
 	background-color: rgb(209, 92, 67, 0.8);
 	border: solid 3px brown;
 	
-	width: fit-content;
+	height: fit-content;
+	width: max-content;
 	border-radius: 1em;
 	padding: 2em;
 }
 
-.field > * > .menu > h1 {
+.field > .items .menu > h1 {
 	flex: 0 0 auto;
 	margin: auto;
 	text-align: center;	
 }
-.field > * > .menu > .info {
+.field > .items .menu > .info {
 	flex: 0 0 auto;
 	border: solid 1px brown;
 	border-radius: 1em;
@@ -85,16 +128,16 @@
 	align-items: center;
 	gap: 1em;
 }
-.field > * > .menu > .info > * {
+.field > .items > * > .menu > .info > * {
 	flex: 1 1 auto;
 	font-size: 1.5em;
 	padding: 0.5em;
 	margin: 0;
 }
-.field > * > .menu > .info > .key {
+.field > .items > * > .menu > .info > .key {
 	font-weight: bold;
 }
-.field > * > .menu > .info > .value {
+.field > .items > * > .menu > .info > .value {
 	border-width: inherit;
 	border-style: inherit;
 	border-color: inherit;
@@ -103,10 +146,10 @@
 	border-bottom: none;
 }
 
-.field .menu > .levels {
+.field > .items .menu > .levels {
 	display: grid;
 
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: auto auto;
 	grid-template-rows: auto auto auto;
 
 	border: solid 1px brown;
@@ -118,11 +161,11 @@
 
 }
 
-.field .menu > .levels > * {
+.field > .items .menu > .levels > * {
 	display: contents;
 }
 
-.field .menu > .levels > * > * {
+.field > .items .menu > .levels > * > * {
 	margin: 0;
 	padding: 0.5em;
 
@@ -131,17 +174,17 @@
 	border-right: none;
 	border-left: none;
 }
-.field .menu > .levels > *:last-child > *{
+.field > .items .menu > .levels > *:last-child > *{
 	border-bottom: none;
 }
-.field .menu > .levels .key {
+.field > .items .menu > .levels .key {
 	font-weight: bold;
 
 	border-right: solid 1px brown;
 
 }
 
-.field .menu > .levels .value {
+.field > .items .menu > .levels .value {
 
 }
 

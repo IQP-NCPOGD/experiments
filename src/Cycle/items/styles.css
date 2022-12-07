@@ -90,5 +90,10 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
+.item.denitrifier > .icon {
+	background-image: url('../assets/denitrifier.svg');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
 
 
