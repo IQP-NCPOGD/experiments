@@ -37,10 +37,10 @@ const getAgeText = (age) => {
 			<p className={'value' + (active ? ' active' : '')}
 				 onClick={handleUpgrade} >{
 				trueLevel >= displayLevel 
-			  ?	'+25 Capacity'
+			  ?	displayLevel == 3 ? '+50 Capacity' : '+25 Capacity'
 				: trueLevel != displayLevel - 1
 				? 'Level ' + (displayLevel - 1) + ' Required'
-				: (Math.floor(state.food)) + '/25 Food Units' 
+				: (Math.floor(state.food)) + '/' + (displayLevel==3 ? '50' : '25') + ' Food Units' 
 			}</p>
 		</div>);
 	}
