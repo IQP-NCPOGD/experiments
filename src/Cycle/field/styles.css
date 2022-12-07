@@ -184,8 +184,16 @@
 
 }
 
-.field > .items .menu > .levels .value {
+.field > .items .menu > .levels .value.active {
+	background-color: rgb(84, 140, 99);
+	cursor:pointer;
+}
 
+.field > .items .menu > .levels > :first-child .value {
+	border-radius: 0 1em 0 0;
+}
+.field > .items .menu > .levels > :last-child .value {
+	border-radius: 0 0 1em 0;
 }
 
 

@@ -81,7 +81,7 @@ export const Field = (props) => {
 			const dx = i.x - item.x;
 			const dy = i.y - item.y;
 			const dist = Math.sqrt(dx * dx + dy * dy);
-			console.log(dist + ' < ' + (item.radius + i.radius));
+			//console.log(dist + ' < ' + (item.radius + i.radius));
 			if (dist < (item.radius + i.radius)) {
 				drop = false;
 			}
@@ -111,8 +111,15 @@ export const Field = (props) => {
 				return <FoodSilo 	key={key}
 													item={item}
 													state={state}
-													setState={setState}
-													offset={offset}/>;
+													offset={offset}
+													upgrade={() => {
+														item.level++;
+														if (item.level == 3) {
+															state.food -= 25;
+														}
+														state.food -= 25;
+														setState(state);
+													}}/>;
 			case 'potato':
 				return <Potato 	key={key}
 											item={item}

@@ -1,6 +1,7 @@
 
 
 import { useState } from 'react';
+import { act } from 'react-dom/test-utils';
 import './styles.css';
 
 const handleMenuClick = (e) => {
@@ -20,53 +21,44 @@ const getAgeText = (age) => {
 	}
 	return ageText;
 }
+	const Level = (props) => {
+		const { displayLevel, trueLevel, upgrade, state } = props;
+		const active = trueLevel == displayLevel - 1 && (state.food >= (displayLevel == 3 ? 50 : 25))
 
-export const FieldObject = (props) => {
-	if (props.type === 'potato') {
-		return Potato(props);
+		const handleUpgrade = () => {
+			if (active) {
+				upgrade();
+			}
+		}
+
+		return (
+		<div>
+			<p className='key'>Level {displayLevel}:</p>
+			<p className={'value' + (active ? ' active' : '')}
+				 onClick={handleUpgrade} >{
+				trueLevel >= displayLevel 
+			  ?	'+25 Capacity'
+				: trueLevel != displayLevel - 1
+				? 'Level ' + (displayLevel - 1) + ' Required'
+				: (Math.floor(state.food)) + '/25 Food Units' 
+			}</p>
+		</div>);
 	}
 
-	const style = {
-		left: (props.x - 50) + 'px', 
-		top:	(props.y - 50) + 'px' 
-	}
-
-	return (<div className={props.type}
-							 style={style}></div>);
-}
 
 export const FoodSilo = (props) => {
 	const [active, setActive] = useState(false);
-	const { x, y, radius, age, level } = props.item;
-	const state = props.state;
-	const setState = props.setState;
-	const offset = props.offset;
+	const { state, item, offset, upgrade } = props;
+	const { x, y, radius, age, level } = item;
 	const capacity = level == 3 ? 100 : level == 2 ? 50 : 25;
-
+	
 	const handleClick = () => {
 		setActive(!active);
 	}
-
 	
 	const style = {
 		left: (x + offset.x) + 'px', 
 		top: (y + offset.y) + 'px' 
-	}
-
-	const Level = (props) => {
-		const l = props.level;
-
-		return (
-		<div>
-			<p className='key'>Level {l}:</p>
-			<p className='value'>{
-				level >= l 
-			  ?	'+25 Capacity'
-				: level != l - 1
-				? 'Level ' + (l - 1) + ' Required'
-				: '0/25 Food Units' 
-			}</p>
-		</div>);
 	}
 
 	return (<div className={'foodSilo'}
@@ -86,9 +78,7 @@ export const FoodSilo = (props) => {
 									<p className='value'>{capacity}</p>
 								</div>
 								<div className='levels'>
-									<Level level={1} />
-									<Level level={2} />
-									<Level level={3} />
+									{	[1,2,3].map((dl, key) => <Level key={key} displayLevel={dl} trueLevel={level} upgrade={upgrade} state={state} />) }
 								</div>
 							</div>
 							<div className='radius'
