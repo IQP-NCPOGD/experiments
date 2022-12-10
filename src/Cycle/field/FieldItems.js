@@ -1,13 +1,14 @@
 
 
 import { useState } from 'react';
-import { act } from 'react-dom/test-utils';
 import './styles.css';
 
 const handleMenuClick = (e) => {
-		 e.stopPropagation();
-	}
+	// item menus do not deselect the children
+	e.stopPropagation();
+}
 
+// converts the age variable to text
 const getAgeText = (age) => {
  	let ageText = '';
 	if (age >= 3600000) {
@@ -21,6 +22,8 @@ const getAgeText = (age) => {
 	}
 	return ageText;
 }
+
+// this is a react component that handles levels/upgrading in the foodSilo item
 	const Level = (props) => {
 		const { displayLevel, trueLevel, upgrade, state } = props;
 		const active = trueLevel == displayLevel - 1 && (state.food >= (displayLevel == 3 ? 50 : 25))
@@ -44,7 +47,6 @@ const getAgeText = (age) => {
 			}</p>
 		</div>);
 	}
-
 
 export const FoodSilo = (props) => {
 	const [active, setActive] = useState(false);
@@ -91,6 +93,8 @@ export const FoodSilo = (props) => {
 					</div>);
 
 }
+
+
 export const Denitrifier = (props) => {
 	const [active, setActive] = useState(false);
 	const { x, y, radius, age } = props.item;

@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { FoodSilo, Potato, Denitrifier, AmmoniumSilo } from './FieldItems';
 import './styles.css';
 
+
+// This function loops through all field items and sums up all the foodSilo capacities to find the total capacity.
 const getCapacity = (items) => {
 	let capacity = 0;
 	items.forEach(item => {
@@ -15,46 +17,64 @@ const getCapacity = (items) => {
 	return capacity;
 }
 
+// This is the field functional component that Cycle.js uses.
 export const Field = (props) => {
+	//offset is used for panning the field
 	const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+	//dragging is used for panning the field
 	const [dragging, setDragging] = useState(false);
 
+	//state is where all of hte game state statistics are held
 	const [state, setState] = useState({
 		food: 0
 	});
+	//items are where all of the current field items are held
 	const [items, setItems] = useState([]);
-	const [frameTime, setFrameTime] = useState();
+
+	//foodMenuActive is used to determine if the FoodMenu is large or not
 	const [foodMenuActive, setFoodMenuActive] = useState(false);
 
+	// this will update each item's age
 	useEffect(() => {
 		items.forEach(item => {
 			item.age = (Date.now() - item.start);
 		});
 	});
+
+	// this makes sure the food doesn't exceed the capacity
 	useEffect(() => {
 		if (state.food > getCapacity(items)) {
 			let ns = state;
-			ns.food = getCapacity(items);
+			ns.food = Math.floor(getCapacity(items));
 			setState(ns);
 		}
 	});
 
+	// dragging/panning: don't send event ot children
 	const handleDragOver = (e) => {
 		e.preventDefault();
 	};
 
+	// handle drop: fires when a new item is dropped on the field
 	const handleDrop = (e) => {
+		// this data is a string that I send from the Items menu in Cycle.js
+		// Possible values are: 'foodSilo', 'potato', 'denitrifier', 'ammoniumSilo'
     var data = e.dataTransfer.getData("text/plain");
 
+		// this sets up the foundation of the item object
+		// this will be added to the items list which will be added to the field
 		let item = {	
-			x: e.clientX - offset.x - 50, 
-			y: e.clientY - offset.y - 50,
-			type: data,
-			radius: 200,
+			x: e.clientX - offset.x - 50, // e.clientX = mouse position
+			y: e.clientY - offset.y - 50, // e.clientY = mouse position 
+			type: data,										
+			radius: 200,									
 			age: 0,
 			start: Date.now() 
 		};
-			switch (data) {
+
+		// add specific values depending on the item type
+		switch (data) {
 			case 'foodSilo':
 				item.level = 1;
 				break;
@@ -78,6 +98,7 @@ export const Field = (props) => {
 				break;
 		}
 	
+		// this code checks the drop radii
 		let drop = true;
 		items.forEach(i => {
 			const dx = i.x - item.x;
@@ -89,11 +110,14 @@ export const Field = (props) => {
 			}
 		});
 
+
 		if (drop) {
 			items.push(item);
+			setItems(items);
 		}
 	};
 
+	// handles panning/dragging
 	const handleDrag = (e) => {
 		if (!dragging) {
 			return;
@@ -107,6 +131,8 @@ export const Field = (props) => {
 	const handleDragEnd = (_) => {
 		setDragging(false);
 	}
+	// this converts an item object to a react component
+	// these are imported from FieldItem.js
 	const itemToFieldObject = (item, key) => {
 		switch (item.type) {
 			case 'foodSilo':
@@ -137,6 +163,7 @@ export const Field = (props) => {
 
 		}
 	}
+	// toggle food menu
 	const handleFoodMenu = () => {
 		setFoodMenuActive(!foodMenuActive);
 	}
@@ -156,13 +183,20 @@ export const Field = (props) => {
 						<PotatoPlantData items={items} />
 					</div>
 					<div className='items'>
-						{ items && items.map(itemToFieldObject) }
+						{ 
+							// this line first checks if items exists
+							// if it does it will then map each item to the itemToFieldObject function
+							// this will return an array of react components that will be rendered
+							// essentially this line displays all items on the field based on their item obect data.
+							items && items.map(itemToFieldObject) 
+						}
 					</div>
 				</div>
 
 	);
 }
 
+// gives more context to potato production
 const PotatoPlantData = (props) => {
 		const potatoes = props.items.filter(item=>item.type==='potato');
 		const count = potatoes.length;
@@ -176,6 +210,7 @@ const PotatoPlantData = (props) => {
 		);
 	}
 
+// gives more context to the total capacity
 const CapacityData = (props) => {
 	const foodSilos = props.items.filter(item=>item.type==='foodSilo');
 	const count = foodSilos.length;

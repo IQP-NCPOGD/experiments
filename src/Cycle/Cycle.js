@@ -1,66 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 //import { ScrollView } from 'react-native';
 import { FoodSiloItem, PotatoItem, DenitrifierItem, AmmoniumSiloItem } from './items/Item';
 import { Field } from './field/Field';
 import './styles.css';
 
-class Cycle extends Component {
+const Cycle = (props) => {
   
-  constructor(props) {
-    super(props);
+	return (
+	 	<div className="main">
+			<Field /> { /*  this field object is where the game logic is held  */ }	
+			<div className="items">
+				{ /*
 
-    this.state = {
-      hour:   0,
-			farms:	0,
-			foodSilos: 0,
-			dentrifiers: 0,
-			statues: 0,
-			ammoniaSilos: 0,
-			ponds: 0,
-			trees: 0,
-			flowers: 0,
-			nbc: 0,
-			dbc: 0,
-      food:   0,
-      n2:     50,
-      runoff: 0 
-    }
-  };
+				These items are the draggable/placeable items in the menu
+				These are not items on the playing field
 
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
-  }; 
+				*/ }
+      	<FoodSiloItem/>
+      	<DenitrifierItem/>
+      	<PotatoItem/>
+      	<AmmoniumSiloItem/>
+			</div>
+		</div>
+	);
 
-  componentWillUnmount() {
-    clearInterval(this.timerID);  
-  };
-
-  tick() {    
-    this.setState({      
-      hour: this.state.hour + 1  
-    });
-  };
-	
-	
-
-  render () {
-    return (
-      <div className="main">
-				<Field />	
-				<div className="items">
-          <FoodSiloItem/>
-          <DenitrifierItem/>
-          <PotatoItem/>
-          <AmmoniumSiloItem/>
-  			</div>
-      </div>
-    );
-  };
-
-}
+};
 
 
 export default Cycle;

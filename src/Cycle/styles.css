@@ -1,14 +1,10 @@
 
-
 .main {
   width: 100vw;
-  height: calc(100vh - 60px); /* nav bar height */
-
-  background-color: tan;
+  height: calc(100vh - 60px);
+background-color: tan;
   display: flex;
 	flex-flow: column nowrap;
-
-
 
 	position: relative;
 	z-index: 40;
