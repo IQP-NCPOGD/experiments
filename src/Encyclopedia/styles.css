@@ -1,3 +1,16 @@
 .main {
     padding: 0rem 2rem;
 }
+
+.en-link {
+    color: #3366cc;
+}
+
+.en-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.en-link:active {
+    color:darkgreen;
+}
