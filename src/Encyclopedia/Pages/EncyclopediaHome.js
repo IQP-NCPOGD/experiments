@@ -11,7 +11,13 @@ function EncyclopediaHome(props) {
             <p>Here is a list of all the current pages:</p>
             <ul>
                 <li>
-                    <span className="en-link" onClick={props.updateCurrentPage("Potato Plant")}>Potato Plant</span>
+                    <span className="en-link" onClick={props.update("Potato Plant")}>Potato Plant</span>
+                </li>
+                <li>
+                    <span className="en-link" onClick={props.update("Food Silo")}>Food Silo</span>
+                </li>
+                <li>
+                    <span className="en-link" onClick={props.update("Ammonium Silo")}>Ammonium Silo</span>
                 </li>
             </ul>
         </div>

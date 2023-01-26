@@ -14,3 +14,18 @@
 .en-link:active {
     color:darkgreen;
 }
+
+.en-control {
+    color: black;
+    font-size:x-large;
+}
+
+.en-control:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: blue;
+}
+
+.en-control:active {
+    color:darkgreen;
+}
