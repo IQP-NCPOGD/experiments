@@ -18,6 +18,7 @@
 .en-control {
     color: black;
     font-size:x-large;
+    user-select: none;
 }
 
 .en-control:hover {
@@ -28,4 +29,10 @@
 
 .en-control:active {
     color:darkgreen;
+}
+
+.en-control-disabled {
+    color: gray;
+    font-size:x-large;
+    user-select: none;
 }

@@ -31,7 +31,7 @@ function Encyclopedia(props) {
     };
 
     const forwardPage = () => {
-        const newPageHistoryIndex = pageHistoryIndex - 1;
+        const newPageHistoryIndex = pageHistoryIndex + 1;
         const newCurrentPage = pageHistory[newPageHistoryIndex];
 
         setPageHistoryIndex(newPageHistoryIndex);
@@ -41,7 +41,7 @@ function Encyclopedia(props) {
     };
 
     const backPage = () => {
-        const newPageHistoryIndex = pageHistoryIndex + 1;
+        const newPageHistoryIndex = pageHistoryIndex - 1;
         const newCurrentPage = pageHistory[newPageHistoryIndex];
 
         setPageHistoryIndex(newPageHistoryIndex);
@@ -69,10 +69,12 @@ function Encyclopedia(props) {
         <div className='main'>
             <div className='controls'>
                 {(pageHistoryIndex > 0 && pageHistory.length > 1) ?
-                    <span className='en-control' onClick={forwardPage}>←</span> : " "}
+                    <span className='en-control' onClick={backPage}>←</span> 
+                    : <span className='en-control-disabled'>←</span>}
 
                 {(pageHistoryIndex < pageHistory.length - 1 && pageHistory.length > 1) ?
-                    <span className='en-control' onClick={backPage}>→</span> : " "}
+                    <span className='en-control' onClick={forwardPage}>→</span> :
+                    <span className='en-control-disabled'>→</span>}
             </div>
             {getCurrentPage()}
         </div>
