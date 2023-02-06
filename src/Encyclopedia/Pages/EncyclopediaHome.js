@@ -11,13 +11,13 @@ function EncyclopediaHome(props) {
                 <p>Here is a list of all the current pages:</p>
                     <div class='true-center'>
                         <button class="butt" type="button" onClick={props.update("Potato Plant")}>
-                            <img src="https://i.ibb.co/CW5Wvry/buttonpng.png" alt="buttonpng" border="0"/>
+                            <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
                         </button>
                         <button class="butt" type="button" onClick={props.update("Food Silo")}>
-                            <img src="https://i.ibb.co/CW5Wvry/buttonpng.png" alt="buttonpng" border="0"/>
+                            <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
                         </button>
                         <button class="butt" type="button" onClick={props.update("Ammonium Silo")}>
-                            <img src="https://i.ibb.co/CW5Wvry/buttonpng.png" alt="buttonpng" border="0"/>
+                            <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
                         </button>
                     </div>
                     
