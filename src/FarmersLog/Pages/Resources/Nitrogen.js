@@ -1,13 +1,13 @@
 import React from 'react';
 
-import '../styles.css';
+import '../../styles.css';
 
-function NitrogenRunoff(props) {
+function Nitrogen(props) {
 
     return (
         <div className='main'>
-            <h1>Nitrogen Runoff</h1>
-            <p>This is the page for the Nitrogen Runoff.</p>
+            <h1>Nitrogen</h1>
+            <p>This is the page for Nitrogen.</p>
             <div class='true-center'>
                 <button class="butt" type="button" onClick={props.update("Home")}>
                     <div class='banner'>
@@ -20,4 +20,4 @@ function NitrogenRunoff(props) {
     );
 }
 
-export default NitrogenRunoff;
+export default Nitrogen;

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import './styles.css';
+import './././styles.css';
 
 import FarmersLogHome from './Pages/FarmersLogHome';
 
-import Food from './Pages/Food';
-import PotatoPlant from './Pages/PotatoPlant';
-import FoodSilo from './Pages/FoodSilo';
+import Food from './Pages/Resources/Food';
+import Ammonium from './Pages/Resources/Ammonium';
+import Nitrogen from './Pages/Resources/Nitrogen';
+import NitrogenRunoff from './Pages/Resources/Nitrogen Runoff';
 
-import Ammonium from './Pages/Ammonium';
-import AmmoniumSilo from './Pages/AmmoniumSilo';
+import PotatoPlant from './Pages/Tiles/PotatoPlant';
+import FoodSilo from './Pages/Tiles/FoodSilo';
+import AmmoniumSilo from './Pages/Tiles/AmmoniumSilo';
+import NitrogenFixator from './Pages/Tiles/NitrogenFixator';
 
-import NitrogenFixator from './Pages/NitrogenFixator';
-import Nitrogen from './Pages/Nitrogen';
-import NitrogenRunoff from './Pages/Nitrogen Runoff';
 
 function FarmersLog(props) {
 

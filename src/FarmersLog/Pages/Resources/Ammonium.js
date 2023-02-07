@@ -1,13 +1,13 @@
 import React from 'react';
 
-import '../styles.css';
+import '../../styles.css';
 
-function FoodSilo(props) {
+function Ammonium(props) {
 
     return (
         <div className='main'>
-            <h1>Food Silo</h1>
-            <p>This is the page for the Food Silo.</p>
+            <h1>Ammonium</h1>
+            <p>This is the page for Ammonium.</p>
             <div class='true-center'>
                 <button class="butt" type="button" onClick={props.update("Home")}>
                     <div class='banner'>
@@ -20,4 +20,4 @@ function FoodSilo(props) {
     );
 }
 
-export default FoodSilo;
+export default Ammonium;

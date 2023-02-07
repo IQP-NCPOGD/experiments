@@ -86,7 +86,6 @@ img {
 
   * {box-sizing: border-box}
 
-  /* Style the tab */
   .tab {
     float: left;
     background-color: inherit;
@@ -94,7 +93,6 @@ img {
 
   }
   
-  /* Style the buttons that are used to open the tab content */
   .tab button {
     display: block;
     background-color: inherit;
@@ -108,7 +106,6 @@ img {
     transition: 0.3s;
   }
   
-  /* Change background color of buttons on hover */
   .tab button:hover {
     background-color: #A98467;
   }

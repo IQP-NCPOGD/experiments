@@ -1,13 +1,13 @@
 import React from 'react';
 
-import '../styles.css';
+import '../../styles.css';
 
-function Food(props) {
+function NitrogenFixator(props) {
 
     return (
         <div className='main'>
-            <h1>Food</h1>
-            <p>This is the page for Food.</p>
+            <h1>Nitrogen Fixator</h1>
+            <p>This is the page for the Nitrogen Fixator.</p>
             <div class='true-center'>
                 <button class="butt" type="button" onClick={props.update("Home")}>
                     <div class='banner'>
@@ -20,4 +20,4 @@ function Food(props) {
     );
 }
 
-export default Food;
+export default NitrogenFixator;
