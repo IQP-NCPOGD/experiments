@@ -12,13 +12,13 @@ function FarmersLogHome(props) {
                 <div className='banner'>
                     <h4>Food</h4>
                 </div> 
-                <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
+                <img src="../../../../Icons/potato.png" alt="buttonpng" border="0"/>
             </button>
             <button className="butt" type="button" onClick={props.update("Ammonium")}>                            
                 <div className='banner'>
                     <h4>Ammonium</h4>
                 </div> 
-                <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
+                <img src="../../../../Icons/ammonium.png" alt="buttonpng" border="0"/>
             </button>
             <button className="butt" type="button" onClick={props.update("Nitrogen")}>
                 <div className='banner'>
@@ -40,7 +40,7 @@ function FarmersLogHome(props) {
                 <div className='banner'>
                     <h4>Potato Plant</h4>
                 </div> 
-                <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
+                <img src="../../../../Icons/plant.png" alt="buttonpng" border="0"/>
             </button>
             <button className="butt" type="button" onClick={props.update("Food Silo")}>
                 <div className='banner'>

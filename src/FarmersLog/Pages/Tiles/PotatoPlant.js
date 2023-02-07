@@ -13,7 +13,7 @@ function PotatoPlant(props) {
                     <div class='banner'>
                         <h4>Home</h4>
                     </div> 
-                    <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
+                    <img src="../../../../../logo192.png" alt="buttonpng" border="0"/>
                 </button>
             </div>
         </div>
