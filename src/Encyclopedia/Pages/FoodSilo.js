@@ -7,8 +7,15 @@ function FoodSilo(props) {
     return (
         <div className='main'>
             <h1>Food Silo</h1>
-            <p>This is the page for the food silo</p>
-            <p className="en-link" onClick={props.update("Home")}>Link back to home page</p>
+            <p>This is the page for the Food Silo.</p>
+            <div class='true-center'>
+                <button class="butt" type="button" onClick={props.update("Home")}>
+                    <div class='banner'>
+                        <h4>Home</h4>
+                    </div> 
+                    <img src="../../../../logo192.png" alt="buttonpng" border="0"/>
+                </button>
+            </div>
         </div>
     );
 }

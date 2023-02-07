@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
+import './styles.css';
 
-import PotatoPlant from './Pages/PotatoPlant';
 import EncyclopediaHome from './Pages/EncyclopediaHome';
+
+import Food from './Pages/Food';
+import PotatoPlant from './Pages/PotatoPlant';
 import FoodSilo from './Pages/FoodSilo';
+
+import Ammonium from './Pages/Ammonium';
 import AmmoniumSilo from './Pages/AmmoniumSilo';
 
-import './styles.css';
+import NitrogenFixator from './Pages/NitrogenFixator';
+import Nitrogen from './Pages/Nitrogen';
+import NitrogenRunoff from './Pages/Nitrogen Runoff';
 
 function Encyclopedia(props) {
 
@@ -54,12 +61,22 @@ function Encyclopedia(props) {
         switch (currentPage) {
             case "Home":
                 return (<EncyclopediaHome update={pushPage} />);
+            case "Food":
+                    return (<Food update={pushPage} />);   
             case "Potato Plant":
                 return (<PotatoPlant update={pushPage} />);
+            case "Ammonium":
+                return (<Ammonium update={pushPage} />);
             case "Ammonium Silo":
                 return (<AmmoniumSilo update={pushPage} />);
             case "Food Silo":
                 return (<FoodSilo update={pushPage} />);
+            case "Nitrogen":
+                return (<Nitrogen update={pushPage} />);
+            case "Nitrogen Runoff":
+                return (<NitrogenRunoff update={pushPage} />);
+            case "Nitrogen Fixator":
+                return (<NitrogenFixator update={pushPage} />);
             default:
                 return (<EncyclopediaHome update={pushPage} />);
         }
@@ -80,5 +97,6 @@ function Encyclopedia(props) {
         </div>
     );
 }
+
 
 export default Encyclopedia;
