@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import '../styles.css';
 
-function EncyclopediaHome(props) {
+function FarmersLogHome(props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     let tabArray = [
@@ -65,8 +65,8 @@ function EncyclopediaHome(props) {
 
     return (
             <div className='main'>
-                <h1>Encyclopedia Home Page</h1>
-                <p>Welcome to the encyclopedia.</p>
+                <h1>Farmer's Log Table of Contents</h1>
+                <p>Welcome to the Farmer's Log.</p>
                 <p>Here is a list of all the current pages:</p>
 
                 <ul>
@@ -83,4 +83,4 @@ function EncyclopediaHome(props) {
 }
 
 
-export default EncyclopediaHome;
+export default FarmersLogHome;

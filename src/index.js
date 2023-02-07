@@ -4,7 +4,7 @@ import './index.css';
 import Home from './Home/Home';
 import ARJS from './ARJS/ARJS';
 import Cycle from './Cycle/Cycle';
-import Encyclopedia from './Encyclopedia/Encyclopedia';
+import FarmersLog from './FarmersLog/FarmersLog';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
@@ -16,7 +16,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="Cycle" element={<Cycle /> }/>
           <Route path="ARJS" element={<ARJS />} />
-          <Route path="Encyclopedia" element={<Encyclopedia />} />
+          <Route path="FarmersLog" element={<FarmersLog />} />
         </Route>
       </Routes>
     </Router>
@@ -41,7 +41,7 @@ const Layout = () => {
           </li>
 
           <li>
-            <Link to="/Encyclopedia">Encyclopedia</Link>
+            <Link to="/FarmersLog">Farmer's Log</Link>
           </li>
         </ul>
       </nav>

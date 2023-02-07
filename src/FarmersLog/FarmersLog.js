@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-import EncyclopediaHome from './Pages/EncyclopediaHome';
+import FarmersLogHome from './Pages/FarmersLogHome';
 
 import Food from './Pages/Food';
 import PotatoPlant from './Pages/PotatoPlant';
@@ -14,7 +14,7 @@ import NitrogenFixator from './Pages/NitrogenFixator';
 import Nitrogen from './Pages/Nitrogen';
 import NitrogenRunoff from './Pages/Nitrogen Runoff';
 
-function Encyclopedia(props) {
+function FarmersLog(props) {
 
     const homepage = props.homepage ?? "Home";
 
@@ -60,7 +60,7 @@ function Encyclopedia(props) {
     const getCurrentPage = () => {
         switch (currentPage) {
             case "Home":
-                return (<EncyclopediaHome update={pushPage} />);
+                return (<FarmersLogHome update={pushPage} />);
             case "Food":
                     return (<Food update={pushPage} />);   
             case "Potato Plant":
@@ -78,7 +78,7 @@ function Encyclopedia(props) {
             case "Nitrogen Fixator":
                 return (<NitrogenFixator update={pushPage} />);
             default:
-                return (<EncyclopediaHome update={pushPage} />);
+                return (<FarmersLogHome update={pushPage} />);
         }
     };
 
@@ -99,4 +99,4 @@ function Encyclopedia(props) {
 }
 
 
-export default Encyclopedia;
+export default FarmersLog;
