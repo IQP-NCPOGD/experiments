@@ -52,7 +52,7 @@ button {
  button:hover {
     filter: brightness(1.25);
     scale: 110%;
-    box-shadow: 0 0 20px rgba(33,33,33,.6); 
+    box-shadow: 0 0 15px rgba(33,33,33,.6); 
  }
 
  button:active{
