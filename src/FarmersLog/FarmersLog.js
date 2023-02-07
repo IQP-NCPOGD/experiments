@@ -6,12 +6,16 @@ import FarmersLogHome from './Pages/FarmersLogHome';
 import Food from './Pages/Resources/Food';
 import Ammonium from './Pages/Resources/Ammonium';
 import Nitrogen from './Pages/Resources/Nitrogen';
-import NitrogenRunoff from './Pages/Resources/Nitrogen Runoff';
+import NitrogenRunoff from './Pages/Resources/NitrogenRunoff';
 
 import PotatoPlant from './Pages/Tiles/PotatoPlant';
 import FoodSilo from './Pages/Tiles/FoodSilo';
 import AmmoniumSilo from './Pages/Tiles/AmmoniumSilo';
 import NitrogenFixator from './Pages/Tiles/NitrogenFixator';
+
+import Denitrification from './Pages/Concepts/Denitrification';
+import NitrogenCycle from './Pages/Concepts/NitrogenCycle';
+import NitrogenFixation from './Pages/Concepts/NitrogenFixation';
 
 
 function FarmersLog(props) {
@@ -61,22 +65,32 @@ function FarmersLog(props) {
         switch (currentPage) {
             case "Home":
                 return (<FarmersLogHome update={pushPage} />);
+
             case "Food":
                     return (<Food update={pushPage} />);   
-            case "Potato Plant":
-                return (<PotatoPlant update={pushPage} />);
             case "Ammonium":
                 return (<Ammonium update={pushPage} />);
-            case "Ammonium Silo":
-                return (<AmmoniumSilo update={pushPage} />);
-            case "Food Silo":
-                return (<FoodSilo update={pushPage} />);
             case "Nitrogen":
                 return (<Nitrogen update={pushPage} />);
             case "Nitrogen Runoff":
                 return (<NitrogenRunoff update={pushPage} />);
+            
+            case "Potato Plant":
+                return (<PotatoPlant update={pushPage} />);
+            case "Ammonium Silo":
+                return (<AmmoniumSilo update={pushPage} />);
+            case "Food Silo":
+                return (<FoodSilo update={pushPage} />);
             case "Nitrogen Fixator":
                 return (<NitrogenFixator update={pushPage} />);
+
+            case "Nitrogen Cycle":
+                    return (<NitrogenCycle update={pushPage} />);   
+            case "Nitrogen Fixation":
+                    return (<NitrogenFixation update={pushPage} />);       
+            case "Denitrification":
+                    return (<Denitrification update={pushPage} />);   
+                     
             default:
                 return (<FarmersLogHome update={pushPage} />);
         }
