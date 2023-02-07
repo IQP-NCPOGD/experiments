@@ -7,7 +7,7 @@ function FarmersLogHome(props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     let tabArray = [
-        <div class="tabContent" id="resources">
+        <div>
             <button className="butt" type="button" onClick={props.update("Food")}>                            
                 <div className='banner'>
                     <h4>Food</h4>
@@ -35,7 +35,7 @@ function FarmersLogHome(props) {
         </div>,
 
 
-        <div className="tabContent" id="tiles">
+        <div>
             <button className="butt" type="button" onClick={props.update("Potato Plant")}>
                 <div className='banner'>
                     <h4>Potato Plant</h4>
@@ -63,7 +63,7 @@ function FarmersLogHome(props) {
             </div>,
 
 
-            <div class="tabContent" id="resources">
+        <div>
             <button className="butt" type="button" onClick={props.update("Nitrogen Cycle")}>                            
                 <div className='banner'>
                     <h4>Nitrogen Cycle</h4>

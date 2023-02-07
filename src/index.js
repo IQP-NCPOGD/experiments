@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import ARJS from './ARJS/ARJS';
 import Cycle from './Cycle/Cycle';
 import FarmersLog from './FarmersLog/FarmersLog';
+import Trivia from './Trivia/Trivia';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="Cycle" element={<Cycle /> }/>
           <Route path="ARJS" element={<ARJS />} />
           <Route path="FarmersLog" element={<FarmersLog />} />
+          <Route path="Trivia" element={<Trivia />} />
         </Route>
       </Routes>
     </Router>
@@ -42,6 +44,10 @@ const Layout = () => {
 
           <li>
             <Link to="/FarmersLog">Farmer's Log</Link>
+          </li>
+
+          <li>
+            <Link to="/Trivia">Trivia</Link>
           </li>
         </ul>
       </nav>
